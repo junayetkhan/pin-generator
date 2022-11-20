@@ -1,6 +1,6 @@
 function getpin() {
     const GeneretePin = generetepin();
-    const pin = GeneretePin+ '';
+    const pin = GeneretePin + '';
     if (pin.length === 4) {
         return GeneretePin;
     } else {
@@ -31,8 +31,6 @@ document.getElementById('calculator-body').addEventListener("click",function(eve
        }
     } 
     else{
-        
-        
         const newFieldnumber = currentFieldNumber + number;
         getInputField.value = newFieldnumber;
         // console.log(newFieldnumber);
