@@ -11,6 +11,12 @@ function generetepin() {
     const randomNum = Math.round(Math.random()*10000);
     return randomNum;
 }
+function GetInputValue(elementid) {
+    const getInputValue = document.getElementById(elementid);
+    const currentValue = getInputValue.value;
+    return currentValue;
+    
+}
 document.getElementById('Generate-Pin').addEventListener("click",function(){
     const GetPin = getpin();
     const GenereteField = document.getElementById('generete-input');
@@ -36,18 +42,18 @@ document.getElementById('calculator-body').addEventListener("click",function(eve
         // console.log(newFieldnumber);
     }
 })
-function GetInputValue(elementid) {
-    const getInputValue = document.getElementById(elementid);
-    const currentValue = getInputValue.value;
-    return currentValue;
-    
-}
+
 document.getElementById('submit-btn').addEventListener("click",function(){
     const generetePinValue = GetInputValue("generete-input");
     const typeValue = GetInputValue("calculator-input");
+    const failureField = document.getElementById('failure');
+    const succsessField = document.getElementById('succsess');
+
     if (typeValue === generetePinValue) {
-        alert("correct!!");
+        failureField.style.display = 'none';
+        succsessField.style.display = 'block';
     } else {
-       alert("incorrect!!");
+        failureField.style.display= 'block';
+        succsessField.style.display = 'none';
     }
 })
