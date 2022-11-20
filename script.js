@@ -36,3 +36,18 @@ document.getElementById('calculator-body').addEventListener("click",function(eve
         // console.log(newFieldnumber);
     }
 })
+function GetInputValue(elementid) {
+    const getInputValue = document.getElementById(elementid);
+    const currentValue = getInputValue.value;
+    return currentValue;
+    
+}
+document.getElementById('submit-btn').addEventListener("click",function(){
+    const generetePinValue = GetInputValue("generete-input");
+    const typeValue = GetInputValue("calculator-input");
+    if (typeValue === generetePinValue) {
+        alert("correct!!");
+    } else {
+       alert("incorrect!!");
+    }
+})
